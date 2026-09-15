@@ -16,3 +16,6 @@ package-lock.json
 
 # macOS
 .DS_Store
+
+# Zip de entrega (se genera local)
+navegador-ghl.zip
