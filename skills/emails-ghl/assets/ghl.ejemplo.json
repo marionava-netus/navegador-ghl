@@ -1,0 +1,39 @@
+{
+  "_comentario": "Cópialo a context/ghl.json (en la raíz del proyecto del asistente) y llénalo. Lo usan las skills emails-ghl, landings-ghl, blog-ghl y tablero-ghl. NO lleva llaves: el PIT va en .env.",
+
+  "panel_base": "https://app.gohighlevel.com",
+  "location_id": "<id de tu sub-cuenta — sale de la URL del panel>",
+
+  "marca": {
+    "navy": "#1F2937",
+    "naranja": "#2563EB"
+  },
+  "_comentario_marca": "navy = color principal (títulos y texto de marca) · naranja = color de acento (links y botones). Los valores de arriba son neutrales: cámbialos por los hex de tu marca.",
+
+  "firma": {
+    "nombre": "<Tu nombre como firmas los correos>",
+    "tagline": "<Una línea: a quién ayudas y a qué. Ej: Ayudo a negocios locales de <ciudad> a conseguir clientes por internet.>",
+    "foto_url": "<URL de tu foto en Media Storage — cuadrada, ~400x400>",
+    "logo_url": "<URL de tu logo en Media Storage — fondo transparente>",
+    "sitio_url": "https://<tu-sitio>",
+    "sitio_label": "www.<tu-sitio>",
+    "linkedin_url": "",
+    "whatsapp_link": "",
+    "razon_social": "<Razón social o nombre comercial con el que facturas>",
+    "direccion": [
+      "<Calle y número>",
+      "<Ciudad, Estado, CP>"
+    ]
+  },
+  "_comentario_direccion": "La dirección postal en los correos NO es opcional: la exige el CAN-SPAM y sin ella se quema la reputación de envío del dominio.",
+
+  "blog": {
+    "blog_id": "<id del sitio de blog — se crea una vez por UI y sale de /blogs/site/{blogId}>",
+    "autor": "<Nombre que firma los posts>"
+  },
+
+  "funnel": {
+    "funnel_id": "",
+    "form_id": ""
+  }
+}

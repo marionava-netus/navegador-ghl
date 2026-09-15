@@ -85,7 +85,7 @@ Luego `--raw eval "window.__cap[0].d"` (viene doble-encodeado → `json.loads` d
 - El scroll del tablero no es el de la ventana: es `.bg-gray-50.overflow-y-auto`. Para capturas por secciones muévelo con `eval` y toma screenshots normales (`--full-page` solo trae el viewport).
 
 ## Rebrandear las barras de título
-Las barras de color son widgets `object-title`; su color vive en `objectWidgetOptions.backgroundColor` (formato `#RRGGBBAA`, ej. `#172F5AFF`). **No se pueden editar in-place**: el PUT solo acepta `create`/`delete` en el `activityBuffer`, así que para recolorear hay que **borrar cada barra y recrearla** con el color nuevo — conservando su posición en el array `layout` (usa el `dashboardWidgetId` nuevo en la entrada correspondiente y deja intactas las de los demás widgets, que llevan su `dashboardWidgets[]._id` actual).
+Las barras de color son widgets `object-title`; su color vive en `objectWidgetOptions.backgroundColor` (formato `#RRGGBBAA`, ej. `#1F2937FF`). **No se pueden editar in-place**: el PUT solo acepta `create`/`delete` en el `activityBuffer`, así que para recolorear hay que **borrar cada barra y recrearla** con el color nuevo — conservando su posición en el array `layout` (usa el `dashboardWidgetId` nuevo en la entrada correspondiente y deja intactas las de los demás widgets, que llevan su `dashboardWidgets[]._id` actual).
 
 ## Idioma
 Los widgets de sistema (Funnel, Conversion rate, Sales efficiency, Facebook Ads report…) muestran su título por **i18n según el idioma del usuario que mira**, no según lo guardado: se ven en inglés con la UI en inglés y en español con la UI en español. No es una diferencia del clon. Los widgets custom sí conservan su título literal.

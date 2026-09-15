@@ -1,0 +1,357 @@
+{
+ "extra": {
+  "nodeId": "csub-heading-M4mzrGDnEl",
+  "visibility": {
+   "value": {
+    "hideDesktop": false,
+    "hideMobile": false
+   }
+  },
+  "text": {
+   "value": "<h1>Título de la sección</h1>"
+  },
+  "mobileFontSize": {
+   "value": 30,
+   "unit": "px"
+  },
+  "desktopFontSize": {
+   "value": 48,
+   "unit": "px"
+  },
+  "typography": {
+   "value": "var(--headlinefont)"
+  },
+  "inlineTypographies": {
+   "value": []
+  },
+  "icon": {
+   "value": {
+    "name": "",
+    "unicode": "",
+    "fontFamily": ""
+   }
+  },
+  "customClass": {
+   "value": []
+  },
+  "elementVersion": {
+   "value": 2
+  }
+ },
+ "class": {
+  "entranceAnimation": {
+   "value": null
+  },
+  "animationScale": {
+   "value": 1
+  },
+  "animationDuration": {
+   "value": 1
+  },
+  "animationDelay": {
+   "value": 0
+  },
+  "animationEasing": {
+   "value": "linear"
+  }
+ },
+ "styles": {
+  "backgroundColor": {
+   "value": "var(--transparent)"
+  },
+  "color": {
+   "value": "var(--text-color)"
+  },
+  "inlineColors": {
+   "value": []
+  },
+  "boldTextColor": {
+   "value": "var(--text-color)"
+  },
+  "italicTextColor": {
+   "value": "var(--text-color)"
+  },
+  "underlineTextColor": {
+   "value": "var(--text-color)"
+  },
+  "linkTextColor": {
+   "value": "var(--link-color)"
+  },
+  "iconColor": {
+   "value": "var(--text-color)"
+  },
+  "fontFamily": {
+   "value": ""
+  },
+  "fontWeight": {
+   "value": "normal",
+   "desktop": "500"
+  },
+  "boxShadow": {
+   "value": "none"
+  },
+  "paddingLeft": {
+   "unit": "px",
+   "value": 0
+  },
+  "paddingRight": {
+   "value": 0,
+   "unit": "px"
+  },
+  "paddingTop": {
+   "unit": "px",
+   "value": 0
+  },
+  "paddingBottom": {
+   "unit": "px",
+   "value": 5
+  },
+  "opacity": {
+   "value": "1"
+  },
+  "textShadow": {
+   "value": "none"
+  },
+  "borderColor": {
+   "value": "var(--black)"
+  },
+  "borderWidth": {
+   "value": "0px"
+  },
+  "borderStyle": {
+   "value": "none"
+  },
+  "borderRadius": {
+   "value": "0px"
+  },
+  "lineHeight": {
+   "value": 1.3,
+   "unit": "em"
+  },
+  "textTransform": {
+   "value": "none"
+  },
+  "letterSpacing": {
+   "value": "0",
+   "unit": "px"
+  },
+  "textAlign": {
+   "value": "left"
+  }
+ },
+ "wrapper": {
+  "marginTop": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginBottom": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginLeft": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginRight": {
+   "unit": "px",
+   "value": 0
+  },
+  "width": {
+   "value": "auto",
+   "unit": ""
+  },
+  "height": {
+   "value": "auto",
+   "unit": ""
+  }
+ },
+ "customCss": [],
+ "id": "sub-heading-M4mzrGDnEl",
+ "type": "element",
+ "child": [],
+ "mobileStyles": {},
+ "mobileWrapper": {},
+ "meta": "sub-heading",
+ "tagName": "c-sub-heading",
+ "title": "Sub Headline",
+ "tag": "h3",
+ "element": {
+  "extra": {
+   "nodeId": "csub-heading-tYys9wtJci",
+   "visibility": {
+    "value": {
+     "hideDesktop": false,
+     "hideMobile": false
+    }
+   },
+   "text": {
+    "value": "<h1><span>Planes de retiro</span></h1>"
+   },
+   "mobileFontSize": {
+    "value": 48,
+    "unit": "px"
+   },
+   "desktopFontSize": {
+    "value": 48,
+    "unit": "px"
+   },
+   "typography": {
+    "value": "var(--headlinefont)"
+   },
+   "inlineTypographies": {
+    "value": []
+   },
+   "icon": {
+    "value": {
+     "name": "",
+     "unicode": "",
+     "fontFamily": ""
+    }
+   },
+   "customClass": {
+    "value": []
+   },
+   "elementVersion": {
+    "value": 2
+   }
+  },
+  "class": {
+   "entranceAnimation": {
+    "value": null
+   },
+   "animationScale": {
+    "value": 1
+   },
+   "animationDuration": {
+    "value": 1
+   },
+   "animationDelay": {
+    "value": 0
+   },
+   "animationEasing": {
+    "value": "linear"
+   }
+  },
+  "styles": {
+   "backgroundColor": {
+    "value": "var(--transparent)"
+   },
+   "color": {
+    "value": "var(--text-color)"
+   },
+   "inlineColors": {
+    "value": []
+   },
+   "boldTextColor": {
+    "value": "var(--text-color)"
+   },
+   "italicTextColor": {
+    "value": "var(--text-color)"
+   },
+   "underlineTextColor": {
+    "value": "var(--text-color)"
+   },
+   "linkTextColor": {
+    "value": "var(--link-color)"
+   },
+   "iconColor": {
+    "value": "var(--text-color)"
+   },
+   "fontFamily": {
+    "value": ""
+   },
+   "fontWeight": {
+    "value": "normal",
+    "desktop": "500"
+   },
+   "boxShadow": {
+    "value": "none"
+   },
+   "paddingLeft": {
+    "unit": "px",
+    "value": 0
+   },
+   "paddingRight": {
+    "value": 0,
+    "unit": "px"
+   },
+   "paddingTop": {
+    "unit": "px",
+    "value": 10
+   },
+   "paddingBottom": {
+    "unit": "px",
+    "value": 10
+   },
+   "opacity": {
+    "value": "1"
+   },
+   "textShadow": {
+    "value": "none"
+   },
+   "borderColor": {
+    "value": "var(--black)"
+   },
+   "borderWidth": {
+    "value": "0px"
+   },
+   "borderStyle": {
+    "value": "none"
+   },
+   "borderRadius": {
+    "value": "0px"
+   },
+   "lineHeight": {
+    "value": 1.3,
+    "unit": "em"
+   },
+   "textTransform": {
+    "value": "none"
+   },
+   "letterSpacing": {
+    "value": "0",
+    "unit": "px"
+   },
+   "textAlign": {
+    "value": "left"
+   }
+  },
+  "wrapper": {
+   "marginTop": {
+    "unit": "px",
+    "value": 0
+   },
+   "marginBottom": {
+    "unit": "px",
+    "value": 0
+   },
+   "marginLeft": {
+    "unit": "px",
+    "value": 0
+   },
+   "marginRight": {
+    "unit": "px",
+    "value": 0
+   },
+   "width": {
+    "value": "auto",
+    "unit": ""
+   },
+   "height": {
+    "value": "auto",
+    "unit": ""
+   }
+  },
+  "customCss": [],
+  "id": "sub-heading-tYys9wtJci",
+  "type": "element",
+  "child": [],
+  "mobileStyles": {},
+  "mobileWrapper": {},
+  "meta": "sub-heading",
+  "tagName": "c-sub-heading",
+  "title": "Sub Headline",
+  "tag": "h3",
+  "updated": true
+ }
+}

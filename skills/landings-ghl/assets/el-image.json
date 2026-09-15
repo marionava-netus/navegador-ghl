@@ -1,0 +1,512 @@
+{
+ "extra": {
+  "nodeId": "cimage-i2fBZcn8Ou",
+  "visibility": {
+   "value": {
+    "hideDesktop": false,
+    "hideMobile": false
+   }
+  },
+  "imageActions": {
+   "value": "none"
+  },
+  "visitWebsite": {
+   "value": {
+    "url": "",
+    "newTab": false
+   }
+  },
+  "downloadFile": {
+   "value": {
+    "fileUrl": "",
+    "fileName": ""
+   }
+  },
+  "imageProperties": {
+   "value": {
+    "url": "",
+    "altText": "",
+    "compression": true,
+    "placeholderBase64": "",
+    "servingUrl": "",
+    "imageMeta": ""
+   }
+  },
+  "customClass": {
+   "value": []
+  },
+  "hideElements": {
+   "value": []
+  },
+  "showElements": {
+   "value": []
+  },
+  "scrollToElement": {
+   "value": ""
+  },
+  "phoneNumber": {
+   "value": ""
+  },
+  "emailAddress": {
+   "value": ""
+  },
+  "stepPath": {
+   "value": ""
+  },
+  "popupId": {
+   "value": ""
+  },
+  "elementVersion": {
+   "value": 2
+  }
+ },
+ "mobileExtra": {},
+ "class": {
+  "imageEffects": {
+   "value": "img-effects-none"
+  },
+  "entranceAnimation": {
+   "value": null
+  },
+  "animationScale": {
+   "value": 1
+  },
+  "animationDuration": {
+   "value": 1
+  },
+  "animationDelay": {
+   "value": 0
+  },
+  "animationEasing": {
+   "value": "linear"
+  }
+ },
+ "styles": {
+  "paddingLeft": {
+   "unit": "px",
+   "value": 10
+  },
+  "paddingRight": {
+   "value": 10,
+   "unit": "px"
+  },
+  "paddingTop": {
+   "unit": "px",
+   "value": 0
+  },
+  "paddingBottom": {
+   "unit": "px",
+   "value": 0
+  },
+  "backgroundColor": {
+   "value": "var(--transparent)"
+  },
+  "opacity": {
+   "value": "1"
+  },
+  "textAlign": {
+   "value": "left"
+  },
+  "boxShadow": {
+   "value": "none"
+  },
+  "width": {
+   "unit": "px",
+   "value": 200
+  },
+  "height": {
+   "value": "auto",
+   "unit": ""
+  },
+  "borderColor": {
+   "value": "var(--black)"
+  },
+  "borderWidth": {
+   "value": "0px"
+  },
+  "borderStyle": {
+   "value": "none"
+  },
+  "borderRadius": {
+   "value": "0px"
+  }
+ },
+ "wrapper": {
+  "marginTop": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginBottom": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginLeft": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginRight": {
+   "unit": "px",
+   "value": 0
+  },
+  "width": {
+   "value": "auto",
+   "unit": ""
+  },
+  "height": {
+   "value": "auto",
+   "unit": ""
+  }
+ },
+ "customCss": [],
+ "mobileStyles": {},
+ "mobileWrapper": {},
+ "id": "image-i2fBZcn8Ou",
+ "type": "element",
+ "child": [],
+ "meta": "image",
+ "tagName": "c-image",
+ "title": "Image",
+ "tag": "",
+ "element": {
+  "extra": {
+   "nodeId": "cimage-i2fBZcn8Ou",
+   "visibility": {
+    "value": {
+     "hideDesktop": false,
+     "hideMobile": false
+    }
+   },
+   "imageActions": {
+    "value": "none"
+   },
+   "visitWebsite": {
+    "value": {
+     "url": "",
+     "newTab": false
+    }
+   },
+   "downloadFile": {
+    "value": {
+     "fileUrl": "",
+     "fileName": ""
+    }
+   },
+   "imageProperties": {
+    "value": {
+     "url": "",
+     "altText": "",
+     "compression": true,
+     "placeholderBase64": "",
+     "servingUrl": "",
+     "imageMeta": ""
+    }
+   },
+   "customClass": {
+    "value": []
+   },
+   "hideElements": {
+    "value": []
+   },
+   "showElements": {
+    "value": []
+   },
+   "scrollToElement": {
+    "value": ""
+   },
+   "phoneNumber": {
+    "value": ""
+   },
+   "emailAddress": {
+    "value": ""
+   },
+   "stepPath": {
+    "value": ""
+   },
+   "popupId": {
+    "value": ""
+   },
+   "elementVersion": {
+    "value": 2
+   }
+  },
+  "mobileExtra": {},
+  "class": {
+   "imageEffects": {
+    "value": "img-effects-none"
+   },
+   "entranceAnimation": {
+    "value": null
+   },
+   "animationScale": {
+    "value": 1
+   },
+   "animationDuration": {
+    "value": 1
+   },
+   "animationDelay": {
+    "value": 0
+   },
+   "animationEasing": {
+    "value": "linear"
+   }
+  },
+  "styles": {
+   "paddingLeft": {
+    "unit": "px",
+    "value": 10
+   },
+   "paddingRight": {
+    "value": 10,
+    "unit": "px"
+   },
+   "paddingTop": {
+    "unit": "px",
+    "value": 10
+   },
+   "paddingBottom": {
+    "unit": "px",
+    "value": 0
+   },
+   "backgroundColor": {
+    "value": "var(--transparent)"
+   },
+   "opacity": {
+    "value": "1"
+   },
+   "textAlign": {
+    "value": "left"
+   },
+   "boxShadow": {
+    "value": "none"
+   },
+   "width": {
+    "unit": "px",
+    "value": 200
+   },
+   "height": {
+    "value": "auto",
+    "unit": ""
+   },
+   "borderColor": {
+    "value": "var(--black)"
+   },
+   "borderWidth": {
+    "value": "0px"
+   },
+   "borderStyle": {
+    "value": "none"
+   },
+   "borderRadius": {
+    "value": "0px"
+   }
+  },
+  "wrapper": {
+   "marginTop": {
+    "unit": "px",
+    "value": 0
+   },
+   "marginBottom": {
+    "unit": "px",
+    "value": 0
+   },
+   "marginLeft": {
+    "unit": "px",
+    "value": 0
+   },
+   "marginRight": {
+    "unit": "px",
+    "value": 0
+   },
+   "width": {
+    "value": "auto",
+    "unit": ""
+   },
+   "height": {
+    "value": "auto",
+    "unit": ""
+   }
+  },
+  "customCss": [],
+  "mobileStyles": {},
+  "mobileWrapper": {},
+  "id": "image-i2fBZcn8Ou",
+  "type": "element",
+  "child": [],
+  "meta": "image",
+  "tagName": "c-image",
+  "title": "Image",
+  "tag": "",
+  "updated": true,
+  "element": {
+   "extra": {
+    "nodeId": "cimage-i2fBZcn8Ou",
+    "visibility": {
+     "value": {
+      "hideDesktop": false,
+      "hideMobile": false
+     }
+    },
+    "imageActions": {
+     "value": "none"
+    },
+    "visitWebsite": {
+     "value": {
+      "url": "",
+      "newTab": false
+     }
+    },
+    "downloadFile": {
+     "value": {
+      "fileUrl": "",
+      "fileName": ""
+     }
+    },
+    "imageProperties": {
+     "value": {
+      "url": "",
+      "altText": "",
+      "compression": true,
+      "placeholderBase64": "",
+      "servingUrl": "",
+      "imageMeta": ""
+     }
+    },
+    "customClass": {
+     "value": []
+    },
+    "hideElements": {
+     "value": []
+    },
+    "showElements": {
+     "value": []
+    },
+    "scrollToElement": {
+     "value": ""
+    },
+    "phoneNumber": {
+     "value": ""
+    },
+    "emailAddress": {
+     "value": ""
+    },
+    "stepPath": {
+     "value": ""
+    },
+    "popupId": {
+     "value": ""
+    },
+    "elementVersion": {
+     "value": 2
+    }
+   },
+   "mobileExtra": {},
+   "class": {
+    "imageEffects": {
+     "value": "img-effects-none"
+    },
+    "entranceAnimation": {
+     "value": null
+    },
+    "animationScale": {
+     "value": 1
+    },
+    "animationDuration": {
+     "value": 1
+    },
+    "animationDelay": {
+     "value": 0
+    },
+    "animationEasing": {
+     "value": "linear"
+    }
+   },
+   "styles": {
+    "paddingLeft": {
+     "unit": "px",
+     "value": 10
+    },
+    "paddingRight": {
+     "value": 10,
+     "unit": "px"
+    },
+    "paddingTop": {
+     "unit": "px",
+     "value": 10
+    },
+    "paddingBottom": {
+     "unit": "px",
+     "value": 10
+    },
+    "backgroundColor": {
+     "value": "var(--transparent)"
+    },
+    "opacity": {
+     "value": "1"
+    },
+    "textAlign": {
+     "value": "center"
+    },
+    "boxShadow": {
+     "value": "none"
+    },
+    "width": {
+     "unit": "px",
+     "value": 200
+    },
+    "height": {
+     "value": "auto",
+     "unit": ""
+    },
+    "borderColor": {
+     "value": "var(--black)"
+    },
+    "borderWidth": {
+     "value": "0px"
+    },
+    "borderStyle": {
+     "value": "none"
+    },
+    "borderRadius": {
+     "value": "0px"
+    }
+   },
+   "wrapper": {
+    "marginTop": {
+     "unit": "px",
+     "value": 0
+    },
+    "marginBottom": {
+     "unit": "px",
+     "value": 0
+    },
+    "marginLeft": {
+     "unit": "px",
+     "value": 0
+    },
+    "marginRight": {
+     "unit": "px",
+     "value": 0
+    },
+    "width": {
+     "value": "auto",
+     "unit": ""
+    },
+    "height": {
+     "value": "auto",
+     "unit": ""
+    }
+   },
+   "customCss": [],
+   "mobileStyles": {},
+   "mobileWrapper": {},
+   "id": "image-i2fBZcn8Ou",
+   "type": "element",
+   "child": [],
+   "meta": "image",
+   "tagName": "c-image",
+   "title": "Image",
+   "tag": "",
+   "updated": true
+  }
+ }
+}

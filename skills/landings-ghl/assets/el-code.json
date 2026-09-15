@@ -1,0 +1,55 @@
+{
+ "extra": {
+  "nodeId": "ccustom-code-TPL",
+  "visibility": {
+   "value": {
+    "hideDesktop": false,
+    "hideMobile": false
+   }
+  },
+  "customCode": {
+   "value": {
+    "rawCustomCode": ""
+   }
+  },
+  "customClass": {
+   "value": []
+  }
+ },
+ "class": {},
+ "styles": {},
+ "wrapper": {
+  "marginTop": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginBottom": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginLeft": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginRight": {
+   "unit": "px",
+   "value": 0
+  },
+  "width": {
+   "value": "auto",
+   "unit": ""
+  },
+  "height": {
+   "value": "auto",
+   "unit": ""
+  }
+ },
+ "customCss": [],
+ "id": "custom-code-TPL",
+ "type": "element",
+ "child": [],
+ "meta": "custom-code",
+ "tagName": "c-custom-code",
+ "title": "Custom Code",
+ "tag": ""
+}

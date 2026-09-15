@@ -3,7 +3,9 @@
 **Validada en producción (2026-07)** construyendo la landing de un taller con registro. Publica una página HTML completa en un funnel de GHL **sin pelear con el builder drag-and-drop**: un solo elemento *Custom HTML/Javascript* contiene toda la landing.
 
 ## Cuándo usarla
-Landing/página one-off con diseño propio (HTML+CSS self-contained) que debe vivir en un funnel de GHL con su dominio. NO para páginas que vayas a editar visualmente después — para eso usa el builder nativo de GHL.
+Landing/página **one-off** con diseño propio (HTML+CSS self-contained) que debe vivir en un funnel de GHL con su dominio.
+
+> ⚠️ **Esta NO es la vía por defecto.** Una página hecha con custom code deja de ser editable en el builder: para cualquier landing normal usa la skill **`landings-ghl`**, que arma la página con los **elementos nativos** de GHL (secciones, columnas, textos, imágenes, botones y formularios) y queda editable a mano. Esta receta es para el caso excepcional: un diseño propio que nadie va a tocar después.
 
 ## Piezas
 1. **HTML self-contained** — un solo `<div id="...">` + `<style>` con scope por id (el CSS de GHL no interfiere). Imágenes hosteadas en el Media Storage de la cuenta (Sites → Media). Form nativo de GHL embebido: `<iframe src="https://api.leadconnectorhq.com/widget/form/<FORM_ID>">` + `<script src="https://link.msgsndr.com/js/form_embed.js">`.

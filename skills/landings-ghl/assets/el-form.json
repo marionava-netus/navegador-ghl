@@ -1,0 +1,80 @@
+{
+ "extra": {
+  "nodeId": "cform-ix7JtY7jfN",
+  "visibility": {
+   "value": {
+    "hideDesktop": false,
+    "hideMobile": false
+   }
+  },
+  "formId": {
+   "value": "<FORM_ID>",
+   "text": "<Nombre del formulario>"
+  },
+  "action": {
+   "value": "none"
+  },
+  "visitWebsite": {
+   "value": {
+    "url": "",
+    "newTab": false
+   }
+  },
+  "customClass": {
+   "value": []
+  }
+ },
+ "class": {},
+ "styles": {
+  "paddingTop": {
+   "unit": "px",
+   "value": 0
+  },
+  "paddingBottom": {
+   "unit": "px",
+   "value": 0
+  },
+  "paddingLeft": {
+   "unit": "px",
+   "value": 10
+  },
+  "paddingRight": {
+   "value": 10,
+   "unit": "px"
+  }
+ },
+ "wrapper": {
+  "marginTop": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginBottom": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginLeft": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginRight": {
+   "unit": "px",
+   "value": 0
+  },
+  "width": {
+   "value": "auto",
+   "unit": ""
+  },
+  "height": {
+   "value": "auto",
+   "unit": ""
+  }
+ },
+ "customCss": [],
+ "id": "form-ix7JtY7jfN",
+ "type": "element",
+ "child": [],
+ "meta": "form",
+ "tagName": "c-form",
+ "title": "Form",
+ "tag": ""
+}

@@ -1,0 +1,735 @@
+{
+ "extra": {
+  "nodeId": "cbutton-qXqnRCMENQ",
+  "visibility": {
+   "value": {
+    "hideDesktop": false,
+    "hideMobile": false
+   }
+  },
+  "text": {
+   "value": "Ver más"
+  },
+  "subText": {
+   "value": ""
+  },
+  "mobileFontSize": {
+   "value": 16,
+   "unit": "px"
+  },
+  "desktopFontSize": {
+   "value": 20,
+   "unit": "px"
+  },
+  "subTextDesktopFontSize": {
+   "value": 15,
+   "unit": "px"
+  },
+  "subTextMobileFontSize": {
+   "value": 15,
+   "unit": "px"
+  },
+  "typography": {
+   "value": "var(--headlinefont)"
+  },
+  "iconStart": {
+   "value": {
+    "name": "",
+    "unicode": "",
+    "fontFamily": ""
+   }
+  },
+  "iconEnd": {
+   "value": {
+    "name": "",
+    "unicode": "",
+    "fontFamily": ""
+   }
+  },
+  "action": {
+   "value": "go-to-funnel-step"
+  },
+  "visitWebsite": {
+   "value": {
+    "url": "",
+    "newTab": false
+   }
+  },
+  "downloadFile": {
+   "value": {
+    "fileUrl": "",
+    "fileName": ""
+   }
+  },
+  "hideElements": {
+   "value": []
+  },
+  "showElements": {
+   "value": []
+  },
+  "scrollToElement": {
+   "value": ""
+  },
+  "phoneNumber": {
+   "value": ""
+  },
+  "emailAddress": {
+   "value": ""
+  },
+  "productId": {
+   "value": ""
+  },
+  "stepPath": {
+   "value": "384e9c54-ab63-4c12-9439-748ec3acc40a"
+  },
+  "saleAction": {
+   "value": "go-to-next-funnel-step"
+  },
+  "popupId": {
+   "value": ""
+  },
+  "theme": {
+   "value": "button_theme_4"
+  },
+  "customClass": {
+   "value": []
+  }
+ },
+ "class": {
+  "buttonBgStyle": {
+   "value": "custom"
+  },
+  "buttonVp": {
+   "value": "btn-vp"
+  },
+  "buttonHp": {
+   "value": "btn-hp"
+  },
+  "hoverAnimation": {
+   "value": "buttonElevate"
+  },
+  "entranceAnimation": {
+   "value": "animate__animated animate__flipInX"
+  },
+  "animationScale": {
+   "value": 1
+  },
+  "animationDuration": {
+   "value": 1
+  },
+  "animationDelay": {
+   "value": 0
+  },
+  "animationEasing": {
+   "value": "linear"
+  },
+  "buttonBoxShadow": {
+   "value": "btnshadow"
+  }
+ },
+ "styles": {
+  "backgroundColor": {
+   "value": "var(--color-fepqrwae)"
+  },
+  "color": {
+   "value": "var(--white)"
+  },
+  "secondaryColor": {
+   "value": "var(--white)"
+  },
+  "paddingTop": {
+   "unit": "px",
+   "value": 12
+  },
+  "paddingBottom": {
+   "unit": "px",
+   "value": 12
+  },
+  "paddingLeft": {
+   "unit": "%",
+   "value": 15
+  },
+  "paddingRight": {
+   "unit": "%",
+   "value": 15
+  },
+  "fontWeight": {
+   "value": "",
+   "desktop": "500"
+  },
+  "fontWeightSub": {
+   "desktop": "700",
+   "value": ""
+  },
+  "borderColor": {
+   "value": "var(--gray)"
+  },
+  "borderWidth": {
+   "value": "0px"
+  },
+  "borderStyle": {
+   "value": "solid"
+  },
+  "borderRadius": {
+   "value": "15px"
+  },
+  "letterSpacing": {
+   "value": "0",
+   "unit": "px"
+  },
+  "textTransform": {
+   "value": "uppercase"
+  },
+  "width": {
+   "value": "auto",
+   "unit": "%"
+  },
+  "boxShadow": {
+   "value": "none"
+  },
+  "textShadow": {
+   "value": "0px 0px 0px rgba(0,0,0,0)"
+  },
+  "iconColor": {
+   "value": "var(--white)"
+  },
+  "textDecoration": {
+   "value": "none"
+  }
+ },
+ "wrapper": {
+  "marginTop": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginBottom": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginLeft": {
+   "unit": "px",
+   "value": 0
+  },
+  "marginRight": {
+   "unit": "px",
+   "value": 0
+  },
+  "textAlign": {
+   "value": "left"
+  },
+  "width": {
+   "value": "auto",
+   "unit": ""
+  },
+  "height": {
+   "value": "auto",
+   "unit": ""
+  }
+ },
+ "mobileWrapper": {},
+ "customCss": [],
+ "id": "button-qXqnRCMENQ",
+ "mobileStyles": {},
+ "type": "element",
+ "child": [],
+ "meta": "button",
+ "tagName": "c-button",
+ "title": "Button",
+ "tag": "",
+ "element": {
+  "extra": {
+   "nodeId": "cbutton-qXqnRCMENQ",
+   "visibility": {
+    "value": {
+     "hideDesktop": false,
+     "hideMobile": false
+    }
+   },
+   "text": {
+    "value": "Ver más"
+   },
+   "subText": {
+    "value": ""
+   },
+   "mobileFontSize": {
+    "value": 16,
+    "unit": "px"
+   },
+   "desktopFontSize": {
+    "value": 20,
+    "unit": "px"
+   },
+   "subTextDesktopFontSize": {
+    "value": 15,
+    "unit": "px"
+   },
+   "subTextMobileFontSize": {
+    "value": 15,
+    "unit": "px"
+   },
+   "typography": {
+    "value": "var(--headlinefont)"
+   },
+   "iconStart": {
+    "value": {
+     "name": "",
+     "unicode": "",
+     "fontFamily": ""
+    }
+   },
+   "iconEnd": {
+    "value": {
+     "name": "",
+     "unicode": "",
+     "fontFamily": ""
+    }
+   },
+   "action": {
+    "value": "go-to-funnel-step"
+   },
+   "visitWebsite": {
+    "value": {
+     "url": "",
+     "newTab": false
+    }
+   },
+   "downloadFile": {
+    "value": {
+     "fileUrl": "",
+     "fileName": ""
+    }
+   },
+   "hideElements": {
+    "value": []
+   },
+   "showElements": {
+    "value": []
+   },
+   "scrollToElement": {
+    "value": ""
+   },
+   "phoneNumber": {
+    "value": ""
+   },
+   "emailAddress": {
+    "value": ""
+   },
+   "productId": {
+    "value": ""
+   },
+   "stepPath": {
+    "value": ""
+   },
+   "saleAction": {
+    "value": "go-to-next-funnel-step"
+   },
+   "popupId": {
+    "value": ""
+   },
+   "theme": {
+    "value": "button_theme_4"
+   },
+   "customClass": {
+    "value": []
+   }
+  },
+  "class": {
+   "buttonBgStyle": {
+    "value": "custom"
+   },
+   "buttonVp": {
+    "value": "btn-vp"
+   },
+   "buttonHp": {
+    "value": "btn-hp"
+   },
+   "hoverAnimation": {
+    "value": null
+   },
+   "entranceAnimation": {
+    "value": null
+   },
+   "animationScale": {
+    "value": 1
+   },
+   "animationDuration": {
+    "value": 1
+   },
+   "animationDelay": {
+    "value": 0
+   },
+   "animationEasing": {
+    "value": "linear"
+   },
+   "buttonEffects": {
+    "value": "none"
+   },
+   "buttonBoxShadow": {
+    "value": "btnshadow"
+   }
+  },
+  "styles": {
+   "backgroundColor": {
+    "value": "var(--color-fepqrwae)"
+   },
+   "color": {
+    "value": "var(--white)"
+   },
+   "secondaryColor": {
+    "value": "var(--white)"
+   },
+   "paddingTop": {
+    "unit": "px",
+    "value": 12
+   },
+   "paddingBottom": {
+    "unit": "px",
+    "value": 12
+   },
+   "paddingLeft": {
+    "unit": "%",
+    "value": 20
+   },
+   "paddingRight": {
+    "unit": "%",
+    "value": 20
+   },
+   "fontWeight": {
+    "value": "",
+    "desktop": "500"
+   },
+   "fontWeightSub": {
+    "desktop": "700",
+    "value": ""
+   },
+   "borderColor": {
+    "value": "var(--gray)"
+   },
+   "borderWidth": {
+    "value": "0px"
+   },
+   "borderStyle": {
+    "value": "solid"
+   },
+   "borderRadius": {
+    "value": "15px"
+   },
+   "letterSpacing": {
+    "value": "0",
+    "unit": "px"
+   },
+   "textTransform": {
+    "value": "uppercase"
+   },
+   "width": {
+    "value": "auto",
+    "unit": "%"
+   },
+   "boxShadow": {
+    "value": "none"
+   },
+   "textShadow": {
+    "value": "0px 0px 0px rgba(0,0,0,0)"
+   },
+   "iconColor": {
+    "value": "var(--white)"
+   },
+   "textDecoration": {
+    "value": "none"
+   }
+  },
+  "wrapper": {
+   "marginTop": {
+    "unit": "px",
+    "value": 0
+   },
+   "marginBottom": {
+    "unit": "px",
+    "value": 0
+   },
+   "marginLeft": {
+    "unit": "px",
+    "value": 0
+   },
+   "marginRight": {
+    "unit": "px",
+    "value": 0
+   },
+   "textAlign": {
+    "value": "left"
+   },
+   "width": {
+    "value": "auto",
+    "unit": ""
+   },
+   "height": {
+    "value": "auto",
+    "unit": ""
+   }
+  },
+  "mobileWrapper": {},
+  "customCss": [],
+  "id": "button-qXqnRCMENQ",
+  "mobileStyles": {},
+  "type": "element",
+  "child": [],
+  "meta": "button",
+  "tagName": "c-button",
+  "title": "Button",
+  "tag": "",
+  "updated": true,
+  "element": {
+   "extra": {
+    "nodeId": "cbutton-ohUozRX2m1",
+    "visibility": {
+     "value": {
+      "hideDesktop": false,
+      "hideMobile": false
+     }
+    },
+    "text": {
+     "value": "Ver más"
+    },
+    "subText": {
+     "value": ""
+    },
+    "mobileFontSize": {
+     "value": 18,
+     "unit": "px"
+    },
+    "desktopFontSize": {
+     "value": 20,
+     "unit": "px"
+    },
+    "subTextDesktopFontSize": {
+     "value": 15,
+     "unit": "px"
+    },
+    "subTextMobileFontSize": {
+     "value": 15,
+     "unit": "px"
+    },
+    "typography": {
+     "value": "var(--headlinefont)"
+    },
+    "iconStart": {
+     "value": {
+      "name": "",
+      "unicode": "",
+      "fontFamily": ""
+     }
+    },
+    "iconEnd": {
+     "value": {
+      "name": "",
+      "unicode": "",
+      "fontFamily": ""
+     }
+    },
+    "action": {
+     "value": "go-to-funnel-step"
+    },
+    "visitWebsite": {
+     "value": {
+      "url": "",
+      "newTab": false
+     }
+    },
+    "downloadFile": {
+     "value": {
+      "fileUrl": "",
+      "fileName": ""
+     }
+    },
+    "hideElements": {
+     "value": []
+    },
+    "showElements": {
+     "value": []
+    },
+    "scrollToElement": {
+     "value": ""
+    },
+    "phoneNumber": {
+     "value": ""
+    },
+    "emailAddress": {
+     "value": ""
+    },
+    "productId": {
+     "value": ""
+    },
+    "stepPath": {
+     "value": ""
+    },
+    "saleAction": {
+     "value": "go-to-next-funnel-step"
+    },
+    "popupId": {
+     "value": ""
+    },
+    "theme": {
+     "value": "button_theme_4"
+    },
+    "customClass": {
+     "value": []
+    }
+   },
+   "class": {
+    "buttonBgStyle": {
+     "value": "custom"
+    },
+    "buttonVp": {
+     "value": "btn-vp"
+    },
+    "buttonHp": {
+     "value": "btn-hp"
+    },
+    "hoverAnimation": {
+     "value": null
+    },
+    "entranceAnimation": {
+     "value": null
+    },
+    "animationScale": {
+     "value": 1
+    },
+    "animationDuration": {
+     "value": 1
+    },
+    "animationDelay": {
+     "value": 0
+    },
+    "animationEasing": {
+     "value": "linear"
+    },
+    "buttonEffects": {
+     "value": "none"
+    },
+    "buttonBoxShadow": {
+     "value": "btnshadow"
+    },
+    "borders": {
+     "value": "borderFull"
+    },
+    "borderRadius": {
+     "value": "radius15"
+    },
+    "radiusEdge": {
+     "value": "none"
+    }
+   },
+   "styles": {
+    "backgroundColor": {
+     "value": "var(--color-fepqrwae)"
+    },
+    "color": {
+     "value": "var(--white)"
+    },
+    "secondaryColor": {
+     "value": "var(--white)"
+    },
+    "paddingTop": {
+     "unit": "px",
+     "value": 15
+    },
+    "paddingBottom": {
+     "unit": "px",
+     "value": 15
+    },
+    "paddingLeft": {
+     "unit": "px",
+     "value": 20
+    },
+    "paddingRight": {
+     "value": 20,
+     "unit": "px"
+    },
+    "fontWeight": {
+     "value": "",
+     "desktop": "500"
+    },
+    "fontWeightSub": {
+     "desktop": "700",
+     "value": ""
+    },
+    "borderColor": {
+     "value": "var(--gray)"
+    },
+    "borderWidth": {
+     "value": "2",
+     "unit": "px"
+    },
+    "borderStyle": {
+     "value": "solid"
+    },
+    "borderRadius": {
+     "value": "5px"
+    },
+    "letterSpacing": {
+     "value": "0",
+     "unit": "px"
+    },
+    "textTransform": {
+     "value": "uppercase"
+    },
+    "width": {
+     "value": "100",
+     "unit": "%"
+    },
+    "boxShadow": {
+     "value": "none"
+    },
+    "textShadow": {
+     "value": "0px 0px 0px rgba(0,0,0,0)"
+    },
+    "iconColor": {
+     "value": "var(--white)"
+    },
+    "textDecoration": {
+     "value": "none"
+    }
+   },
+   "wrapper": {
+    "marginTop": {
+     "unit": "px",
+     "value": 0
+    },
+    "marginBottom": {
+     "unit": "px",
+     "value": 0
+    },
+    "marginLeft": {
+     "unit": "px",
+     "value": 0
+    },
+    "marginRight": {
+     "unit": "px",
+     "value": 0
+    },
+    "textAlign": {
+     "value": "center"
+    },
+    "width": {
+     "value": "auto",
+     "unit": ""
+    },
+    "height": {
+     "value": "auto",
+     "unit": ""
+    }
+   },
+   "mobileWrapper": {},
+   "customCss": [],
+   "id": "button-lBYVcVlRPn",
+   "mobileStyles": {},
+   "type": "element",
+   "child": [],
+   "meta": "button",
+   "tagName": "c-button",
+   "title": "Button",
+   "tag": "",
+   "updated": true
+  }
+ }
+}

@@ -1,0 +1,1181 @@
+{
+ "nombre": "Tablero — estándar",
+ "widgets": [
+  {
+   "identifier": "object-title",
+   "chartType": "objectWidget",
+   "group": "object-widgets",
+   "module": "object-widget",
+   "moduleName": "Object",
+   "title": "Contactos nuevos",
+   "options": {},
+   "objectWidgetOptions": {
+    "title": "Contactos nuevos",
+    "titleType": "text",
+    "textColor": "#FFFFFF",
+    "backgroundColor": "#1F2937FF",
+    "textAlign": "left"
+   },
+   "extras": {
+    "version": 1
+   },
+   "_pos": {
+    "x": 0,
+    "y": 0,
+    "w": 12,
+    "h": 2,
+    "minW": 12,
+    "minH": 2
+   }
+  },
+  {
+   "identifier": "crm-contacts-counts",
+   "chartType": "numeric",
+   "group": "crm-contacts-count",
+   "module": "crm-contacts",
+   "moduleName": "Contacts",
+   "apiConfig": {
+    "path": "/dashboards/crm/contacts",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": {
+     "count": "id"
+    },
+    "dateProperty": "date_added",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "dashboard_date_range"
+    }
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Contactos nuevos",
+   "_pos": {
+    "x": 0,
+    "y": 2,
+    "w": 3,
+    "h": 6,
+    "minW": 3,
+    "minH": 4
+   }
+  },
+  {
+   "identifier": "crm-contacts-counts",
+   "chartType": "line",
+   "group": "crm-contacts-count",
+   "module": "crm-contacts",
+   "moduleName": "Contacts",
+   "apiConfig": {
+    "path": "/dashboards/crm/contacts",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": [
+     {
+      "operator": "count",
+      "field": "id"
+     }
+    ],
+    "dateProperty": "date_added",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "dashboard_date_range"
+    },
+    "groupBy": {
+     "fields": [
+      "date_added"
+     ],
+     "limit": null,
+     "orderBy": null,
+     "groupFieldType": "time_series"
+    },
+    "breakdownBy": "daily",
+    "filters": [
+     {
+      "group": "OR",
+      "filters": []
+     }
+    ]
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Contactos por día",
+   "_pos": {
+    "x": 3,
+    "y": 2,
+    "w": 9,
+    "h": 6,
+    "minW": 5,
+    "minH": 6
+   }
+  },
+  {
+   "identifier": "crm-contacts-counts",
+   "chartType": "bar",
+   "group": "crm-contacts-count",
+   "module": "crm-contacts",
+   "moduleName": "Contacts",
+   "apiConfig": {
+    "path": "/dashboards/crm/contacts",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": [
+     {
+      "operator": "count",
+      "field": "id"
+     }
+    ],
+    "dateProperty": "date_added",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "till_date"
+    },
+    "groupBy": {
+     "fields": [
+      "date_added"
+     ],
+     "limit": null,
+     "orderBy": null,
+     "groupFieldType": "time_series"
+    },
+    "breakdownBy": "monthly",
+    "filters": [
+     {
+      "group": "OR",
+      "filters": []
+     }
+    ]
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Contactos por mes",
+   "_pos": {
+    "x": 0,
+    "y": 8,
+    "w": 4,
+    "h": 7,
+    "minW": 5,
+    "minH": 6
+   }
+  },
+  {
+   "identifier": "crm-contact-counts-by-source",
+   "chartType": "donut",
+   "group": "crm-contacts-count",
+   "module": "crm-contacts",
+   "moduleName": "Contacts",
+   "apiConfig": {
+    "path": "/dashboards/crm/contacts",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": [
+     {
+      "operator": "count",
+      "field": "id"
+     }
+    ],
+    "dateProperty": "date_added",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "dashboard_date_range"
+    },
+    "groupBy": {
+     "fields": [
+      "attributions.utm_session_source.keyword"
+     ],
+     "limit": 10,
+     "orderBy": "desc"
+    },
+    "filters": [
+     {
+      "group": "OR",
+      "filters": []
+     }
+    ]
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Contactos por fuente",
+   "_pos": {
+    "x": 4,
+    "y": 8,
+    "w": 4,
+    "h": 7,
+    "minW": 4,
+    "minH": 6
+   }
+  },
+  {
+   "identifier": "crm-contact-counts-by-medium",
+   "chartType": "donut",
+   "group": "crm-contacts-count",
+   "module": "crm-contacts",
+   "moduleName": "Contacts",
+   "apiConfig": {
+    "path": "/dashboards/crm/contacts",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": [
+     {
+      "operator": "count",
+      "field": "id"
+     }
+    ],
+    "filters": [
+     {
+      "group": "OR",
+      "filters": []
+     }
+    ],
+    "dateProperty": "date_added",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "dashboard_date_range"
+    },
+    "groupBy": {
+     "fields": [
+      "attributions.medium.keyword"
+     ],
+     "limit": 10,
+     "orderBy": "desc"
+    }
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Contactos por medio",
+   "_pos": {
+    "x": 8,
+    "y": 8,
+    "w": 4,
+    "h": 7,
+    "minW": 4,
+    "minH": 6
+   }
+  },
+  {
+   "identifier": "object-title",
+   "chartType": "objectWidget",
+   "group": "object-widgets",
+   "module": "object-widget",
+   "moduleName": "Object",
+   "title": "Citas — el motor de las ventas",
+   "options": {},
+   "objectWidgetOptions": {
+    "title": "Citas — el motor de las ventas",
+    "titleType": "text",
+    "textColor": "#FFFFFF",
+    "backgroundColor": "#1F2937FF",
+    "textAlign": "left"
+   },
+   "extras": {
+    "version": 1
+   },
+   "_pos": {
+    "x": 0,
+    "y": 15,
+    "w": 12,
+    "h": 2,
+    "minW": 12,
+    "minH": 2
+   }
+  },
+  {
+   "identifier": "automation-appointments-counts",
+   "chartType": "numeric",
+   "group": "automation-appointments-count",
+   "module": "automation-appointments",
+   "moduleName": "Appointments",
+   "apiConfig": {
+    "path": "/dashboards/automations/appointments",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": {
+     "count": "id"
+    },
+    "dateProperty": "dateAdded",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "dashboard_date_range"
+    }
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Citas generadas",
+   "_pos": {
+    "x": 0,
+    "y": 17,
+    "w": 3,
+    "h": 6,
+    "minW": 3,
+    "minH": 4
+   }
+  },
+  {
+   "identifier": "automation-appointments-count-confirmed",
+   "chartType": "numeric",
+   "group": "automation-appointments-count",
+   "module": "automation-appointments",
+   "moduleName": "Appointments",
+   "apiConfig": {
+    "path": "/dashboards/automations/appointments",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": [
+     {
+      "operator": "count",
+      "field": "id"
+     }
+    ],
+    "dateProperty": "dateAdded",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "dashboard_date_range"
+    },
+    "filters": [
+     {
+      "group": "OR",
+      "filters": [
+       {
+        "group": "AND",
+        "filters": [
+         {
+          "field": "appointmentStatus",
+          "operator": "eq",
+          "value": "showed",
+          "uiMeta": {
+           "fieldMeta": {
+            "customField": null,
+            "savedOptionPairs": [
+             {
+              "label": "Showed",
+              "value": "showed"
+             }
+            ]
+           }
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Citas confirmadas",
+   "_pos": {
+    "x": 3,
+    "y": 17,
+    "w": 3,
+    "h": 6,
+    "minW": 3,
+    "minH": 4
+   }
+  },
+  {
+   "identifier": "automation-appointments-count-cancelled",
+   "chartType": "numeric",
+   "group": "automation-appointments-count",
+   "module": "automation-appointments",
+   "moduleName": "Appointments",
+   "apiConfig": {
+    "path": "/dashboards/automations/appointments",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": {
+     "count": "id"
+    },
+    "dateProperty": "dateAdded",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "dashboard_date_range"
+    },
+    "filters": [
+     {
+      "group": "OR",
+      "filters": [
+       {
+        "group": "AND",
+        "filters": [
+         {
+          "field": "appointmentStatus",
+          "operator": "eq",
+          "value": "noshow",
+          "hasDependentFilters": false,
+          "uiMeta": {
+           "fieldMeta": {
+            "customField": null,
+            "savedOptionPairs": [
+             {
+              "label": "Noshow",
+              "value": "noshow"
+             }
+            ]
+           },
+           "dateMeta": {}
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Citas canceladas",
+   "_pos": {
+    "x": 6,
+    "y": 17,
+    "w": 3,
+    "h": 6,
+    "minW": 3,
+    "minH": 4
+   }
+  },
+  {
+   "identifier": "automation-appointments-count-showed",
+   "chartType": "line",
+   "group": "automation-appointments-count",
+   "module": "automation-appointments",
+   "moduleName": "Appointments",
+   "apiConfig": {
+    "path": "/dashboards/automations/appointments",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": [
+     {
+      "operator": "count",
+      "field": "id"
+     }
+    ],
+    "dateProperty": "dateAdded",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "dashboard_date_range"
+    },
+    "groupBy": {
+     "fields": [
+      "dateAdded"
+     ],
+     "limit": null,
+     "orderBy": null,
+     "groupFieldType": "time_series"
+    },
+    "breakdownBy": "daily",
+    "filters": [
+     {
+      "group": "OR",
+      "filters": [
+       {
+        "group": "AND",
+        "filters": [
+         {
+          "field": "appointmentStatus",
+          "operator": "in",
+          "value": [
+           "new",
+           "confirmed",
+           "showed"
+          ],
+          "uiMeta": {
+           "fieldMeta": {
+            "customField": null,
+            "savedOptionPairs": [
+             {
+              "label": "Showed",
+              "value": "showed"
+             }
+            ]
+           }
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Citas por día",
+   "_pos": {
+    "x": 0,
+    "y": 23,
+    "w": 12,
+    "h": 7,
+    "minW": 5,
+    "minH": 6
+   }
+  },
+  {
+   "identifier": "object-title",
+   "chartType": "objectWidget",
+   "group": "object-widgets",
+   "module": "object-widget",
+   "moduleName": "Object",
+   "title": "Ventas — lo que de verdad cuenta",
+   "options": {},
+   "objectWidgetOptions": {
+    "title": "Ventas — lo que de verdad cuenta",
+    "titleType": "text",
+    "textColor": "#FFFFFF",
+    "backgroundColor": "#1F2937FF",
+    "textAlign": "left"
+   },
+   "extras": {
+    "version": 1
+   },
+   "_pos": {
+    "x": 0,
+    "y": 30,
+    "w": 12,
+    "h": 2,
+    "minW": 12,
+    "minH": 2
+   }
+  },
+  {
+   "identifier": "crm-opportunities-funnel",
+   "chartType": "custom",
+   "group": "crm-opportunities",
+   "module": "custom",
+   "moduleName": "General",
+   "apiConfig": null,
+   "options": {},
+   "extras": {
+    "version": 1
+   },
+   "title": "Embudo de ventas",
+   "_pos": {
+    "x": 0,
+    "y": 32,
+    "w": 12,
+    "h": 12,
+    "minW": 10,
+    "minH": 8
+   }
+  },
+  {
+   "identifier": "crm-opportunities-open-counts",
+   "chartType": "numeric",
+   "group": "crm-opportunities-count",
+   "module": "crm-opportunities",
+   "moduleName": "Opportunities",
+   "apiConfig": {
+    "path": "/dashboards/crm/opportunities",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": {
+     "count": "id"
+    },
+    "dateProperty": "date_added",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "till_date"
+    },
+    "filters": [
+     {
+      "group": "OR",
+      "filters": [
+       {
+        "group": "AND",
+        "filters": [
+         {
+          "field": "status",
+          "operator": "eq",
+          "value": "open",
+          "uiMeta": {
+           "fieldMeta": {
+            "customField": null,
+            "savedOptionPairs": [
+             {
+              "label": "Open",
+              "value": "open"
+             }
+            ]
+           },
+           "dateMeta": {}
+          }
+         },
+         {
+          "field": "pipeline_id",
+          "operator": "eq",
+          "value": "__PIPELINE_ID__",
+          "hasDependentFilters": true,
+          "uiMeta": {
+           "fieldMeta": {
+            "customField": null,
+            "savedOptionPairs": [
+             {
+              "label": "__PIPELINE_NOMBRE__",
+              "value": "__PIPELINE_ID__"
+             }
+            ]
+           },
+           "dateMeta": {}
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Negociaciones activas",
+   "_pos": {
+    "x": 0,
+    "y": 44,
+    "w": 3,
+    "h": 6,
+    "minW": 3,
+    "minH": 4
+   }
+  },
+  {
+   "identifier": "crm-opportunities-won-counts",
+   "chartType": "numeric",
+   "group": "crm-opportunities-count",
+   "module": "crm-opportunities",
+   "moduleName": "Opportunities",
+   "apiConfig": {
+    "path": "/dashboards/crm/opportunities",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": [
+     {
+      "operator": "count",
+      "field": "id"
+     }
+    ],
+    "dateProperty": "date_added",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "dashboard_date_range"
+    },
+    "filters": [
+     {
+      "group": "OR",
+      "filters": [
+       {
+        "group": "AND",
+        "filters": [
+         {
+          "field": "status",
+          "operator": "eq",
+          "value": "won",
+          "uiMeta": {
+           "fieldMeta": {
+            "customField": null,
+            "savedOptionPairs": [
+             {
+              "label": "Won",
+              "value": "won"
+             }
+            ]
+           }
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Ventas cerradas (periodo)",
+   "_pos": {
+    "x": 3,
+    "y": 44,
+    "w": 3,
+    "h": 6,
+    "minW": 3,
+    "minH": 4
+   }
+  },
+  {
+   "identifier": "crm-opportunities-lost-counts",
+   "chartType": "numeric",
+   "group": "crm-opportunities-count",
+   "module": "crm-opportunities",
+   "moduleName": "Opportunities",
+   "apiConfig": {
+    "path": "/dashboards/crm/opportunities",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": [
+     {
+      "operator": "count",
+      "field": "id"
+     }
+    ],
+    "filters": [
+     {
+      "group": "OR",
+      "filters": [
+       {
+        "group": "AND",
+        "filters": [
+         {
+          "field": "status",
+          "operator": "eq",
+          "value": "lost",
+          "uiMeta": {}
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "dateProperty": "date_added",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "dashboard_date_range"
+    }
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Oportunidades perdidas",
+   "_pos": {
+    "x": 6,
+    "y": 44,
+    "w": 3,
+    "h": 6,
+    "minW": 3,
+    "minH": 4
+   }
+  },
+  {
+   "identifier": "crm-opportunities-conversion-rate",
+   "chartType": "custom",
+   "group": "crm-opportunities",
+   "module": "custom",
+   "moduleName": "General",
+   "apiConfig": null,
+   "options": {},
+   "extras": {
+    "version": 1
+   },
+   "title": "Tasa de conversión",
+   "_pos": {
+    "x": 9,
+    "y": 44,
+    "w": 3,
+    "h": 6,
+    "minW": 3,
+    "minH": 6
+   }
+  },
+  {
+   "identifier": "crm-opportunities-won-counts",
+   "chartType": "bar",
+   "group": "crm-opportunities-count",
+   "module": "crm-opportunities",
+   "moduleName": "Opportunities",
+   "apiConfig": {
+    "path": "/dashboards/crm/opportunities",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": [
+     {
+      "operator": "count",
+      "field": "id"
+     }
+    ],
+    "dateProperty": "date_added",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "till_date"
+    },
+    "groupBy": {
+     "fields": [
+      "date_added"
+     ],
+     "limit": null,
+     "orderBy": null,
+     "groupFieldType": "time_series"
+    },
+    "breakdownBy": "monthly",
+    "filters": [
+     {
+      "group": "OR",
+      "filters": [
+       {
+        "group": "AND",
+        "filters": [
+         {
+          "field": "status",
+          "operator": "eq",
+          "value": "won",
+          "uiMeta": {}
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Ventas cerradas por mes",
+   "_pos": {
+    "x": 0,
+    "y": 50,
+    "w": 12,
+    "h": 7,
+    "minW": 5,
+    "minH": 6
+   }
+  },
+  {
+   "identifier": "crm-opportunities-sales-efficiency",
+   "chartType": "custom",
+   "group": "crm-opportunities",
+   "module": "custom",
+   "moduleName": "General",
+   "apiConfig": null,
+   "options": {},
+   "extras": {
+    "version": 1
+   },
+   "title": "Eficiencia de ventas",
+   "_pos": {
+    "x": 0,
+    "y": 57,
+    "w": 12,
+    "h": 6,
+    "minW": 10,
+    "minH": 6
+   }
+  },
+  {
+   "identifier": "object-title",
+   "chartType": "objectWidget",
+   "group": "object-widgets",
+   "module": "object-widget",
+   "moduleName": "Object",
+   "title": "Higiene del CRM — buscar reducir a 0",
+   "options": {},
+   "objectWidgetOptions": {
+    "title": "Higiene del CRM — buscar reducir a 0",
+    "titleType": "text",
+    "textColor": "#FFFFFF",
+    "backgroundColor": "#1F2937FF",
+    "textAlign": "left"
+   },
+   "extras": {
+    "version": 1
+   },
+   "_pos": {
+    "x": 0,
+    "y": 63,
+    "w": 12,
+    "h": 2,
+    "minW": 12,
+    "minH": 2
+   }
+  },
+  {
+   "identifier": "crm-conversations-counts",
+   "chartType": "numeric",
+   "group": "crm-conversations-count",
+   "module": "crm-conversations",
+   "moduleName": "Conversations",
+   "apiConfig": {
+    "path": "/dashboards/crm/conversations",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": {
+     "sum": "unread_count"
+    },
+    "dateProperty": "last_message_date",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "dashboard_date_range"
+    },
+    "filters": [
+     {
+      "group": "OR",
+      "filters": [
+       {
+        "group": "AND",
+        "filters": [
+         {
+          "field": "unread_count",
+          "operator": "eq",
+          "value": "unread",
+          "uiMeta": {
+           "fieldMeta": {
+            "customField": null,
+            "savedOptionPairs": [
+             {
+              "label": "Unread",
+              "value": "unread"
+             }
+            ]
+           },
+           "dateMeta": {}
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Mensajes sin atender",
+   "_pos": {
+    "x": 0,
+    "y": 65,
+    "w": 3,
+    "h": 6,
+    "minW": 3,
+    "minH": 4
+   }
+  },
+  {
+   "identifier": "crm-conversations-counts-unassigned-messages",
+   "chartType": "numeric",
+   "group": "crm-conversations-count",
+   "module": "crm-conversations",
+   "moduleName": "Conversations",
+   "apiConfig": {
+    "path": "/dashboards/crm/conversations",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": [
+     {
+      "operator": "count",
+      "field": "id"
+     }
+    ],
+    "dateProperty": "last_message_date",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "dashboard_date_range"
+    },
+    "filters": [
+     {
+      "group": "OR",
+      "filters": [
+       {
+        "group": "AND",
+        "filters": [
+         {
+          "field": "assigned_to",
+          "operator": "not_exists",
+          "uiMeta": {
+           "fieldMeta": {
+            "customField": null,
+            "savedOptionPairs": []
+           }
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Conversaciones sin dueño",
+   "_pos": {
+    "x": 3,
+    "y": 65,
+    "w": 3,
+    "h": 6,
+    "minW": 3,
+    "minH": 4
+   }
+  },
+  {
+   "identifier": "crm-contacts-without-email",
+   "chartType": "numeric",
+   "group": "crm-contacts-count",
+   "module": "crm-contacts",
+   "moduleName": "Contacts",
+   "apiConfig": {
+    "path": "/dashboards/crm/contacts",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": {
+     "count": "id"
+    },
+    "dateProperty": "date_added",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "till_date"
+    },
+    "filters": [
+     {
+      "group": "OR",
+      "filters": [
+       {
+        "group": "AND",
+        "filters": [
+         {
+          "field": "email",
+          "operator": "not_exists",
+          "uiMeta": {
+           "fieldMeta": {
+            "customField": null,
+            "savedOptionPairs": []
+           },
+           "dateMeta": {}
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Contactos sin correo",
+   "_pos": {
+    "x": 6,
+    "y": 65,
+    "w": 3,
+    "h": 6,
+    "minW": 3,
+    "minH": 4
+   }
+  },
+  {
+   "identifier": "crm-contacts-without-phone",
+   "chartType": "numeric",
+   "group": "crm-contacts-count",
+   "module": "crm-contacts",
+   "moduleName": "Contacts",
+   "apiConfig": {
+    "path": "/dashboards/crm/contacts",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": {
+     "count": "id"
+    },
+    "dateProperty": "date_added",
+    "comparisonDateProperty": "no_comparison",
+    "dateRangeOverride": {
+     "operator": "till_date"
+    },
+    "filters": [
+     {
+      "group": "OR",
+      "filters": [
+       {
+        "group": "AND",
+        "filters": [
+         {
+          "field": "phone",
+          "operator": "not_exists",
+          "uiMeta": {
+           "fieldMeta": {
+            "customField": null,
+            "savedOptionPairs": []
+           },
+           "dateMeta": {}
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Contactos sin teléfono",
+   "_pos": {
+    "x": 9,
+    "y": 65,
+    "w": 3,
+    "h": 6,
+    "minW": 3,
+    "minH": 4
+   }
+  },
+  {
+   "identifier": "crm-contact-counts-by-assigned-user",
+   "chartType": "bar",
+   "group": "crm-contacts-count",
+   "module": "crm-contacts",
+   "moduleName": "Contacts",
+   "apiConfig": {
+    "path": "/dashboards/crm/contacts",
+    "method": "POST"
+   },
+   "options": {
+    "aggregations": {
+     "count": "id"
+    },
+    "dateProperty": "date_added",
+    "dateRangeOverride": {
+     "operator": "till_date"
+    },
+    "groupBy": {
+     "fields": [
+      "assigned_to"
+     ],
+     "limit": 10,
+     "orderBy": "desc",
+     "groupFieldType": "field"
+    },
+    "breakdownBy": "daily"
+   },
+   "extras": {
+    "version": 1
+   },
+   "title": "Contactos por responsable",
+   "_pos": {
+    "x": 0,
+    "y": 71,
+    "w": 12,
+    "h": 8,
+    "minW": 8,
+    "minH": 6
+   }
+  }
+ ],
+ "para": "Negocio que vende por citas: contactos → citas → ventas cerradas."
+}
