@@ -1,0 +1,307 @@
+<!-- ===== Visor de documentos — modal con PDF embebido + descarga =====
+     Pegar en: Sites -> Websites -> [sitio] -> Settings -> Body tracking code
+     ANTES DE USAR: (1) llena el objeto DOCS con las URLs reales de tus PDFs del
+     Media Storage y el nombre con el que quieres que se descarguen; (2) cambia la
+     pila de fuentes por la de tu sitio (busca "REEMPLAZA-FUENTE" abajo).
+===================================================================== -->
+<style>
+.doc-pdf-ov{font-family:/*REEMPLAZA-FUENTE*/ Roboto,'Helvetica Neue',Arial,sans-serif;position:fixed;inset:0;z-index:2147483000;display:none;background:rgba(8,20,50,.72);
+  -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);opacity:0;transition:opacity .22s ease}
+.doc-pdf-ov.is-open{display:block;opacity:1}
+.doc-pdf-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
+.doc-pdf-panel{position:relative;display:flex;flex-direction:column;width:100%;max-width:940px;height:100%;max-height:92vh;
+  background:#f7f3f3;border-radius:14px;overflow:hidden;box-sizing:border-box;
+  box-shadow:0 24px 70px rgba(0,0,0,.45);transform:translateY(14px) scale(.985);transition:transform .22s ease}
+.doc-pdf-ov.is-open .doc-pdf-panel{transform:none}
+
+.doc-pdf-head{flex:0 0 auto;display:flex;align-items:center;gap:12px;padding:14px 16px;background:#003ca6;color:#fff}
+.doc-pdf-title{flex:1 1 auto;margin:0;font-size:16px;line-height:1.3;font-weight:700;color:#fff;
+  font-family:/*REEMPLAZA-FUENTE*/ Roboto,'Helvetica Neue',Arial,sans-serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.doc-pdf-btn{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;border:0;cursor:pointer;
+  padding:9px 15px;border-radius:999px;background:#129ecf;color:#fff;font-size:14px;font-weight:600;
+  font-family:/*REEMPLAZA-FUENTE*/ Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1;text-decoration:none;transition:background .15s ease,opacity .15s ease}
+.doc-pdf-btn:hover{background:#0f8ab6;color:#fff}
+.doc-pdf-btn[disabled]{opacity:.6;cursor:default}
+.doc-pdf-btn svg{width:16px;height:16px;flex:0 0 auto}
+.doc-pdf-x{flex:0 0 auto;width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;
+  border:0;border-radius:50%;cursor:pointer;background:rgba(255,255,255,.14);color:#fff;padding:0;line-height:1}
+.doc-pdf-x:hover{background:rgba(255,255,255,.26);color:#fff}
+.doc-pdf-x svg{width:17px;height:17px}
+
+.doc-pdf-body{flex:1 1 auto;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;padding:18px 14px 26px;text-align:center}
+.doc-pdf-page{display:block;margin:0 auto 14px;max-width:100%;height:auto;background:#fff;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.16)}
+.doc-pdf-msg{padding:44px 22px;color:#3b4548;font-size:15px;line-height:1.55;font-family:/*REEMPLAZA-FUENTE*/ Roboto,'Helvetica Neue',Arial,sans-serif}
+.doc-pdf-msg p{margin:0 0 16px}
+.doc-pdf-spin{width:30px;height:30px;margin:0 auto 14px;border:3px solid #cbcbcb;border-top-color:#003ca6;
+  border-radius:50%;animation:doc-pdf-rot .8s linear infinite}
+@keyframes doc-pdf-rot{to{transform:rotate(360deg)}}
+.doc-pdf-frame{width:100%;height:100%;min-height:60vh;border:0;background:#fff;display:block}
+
+.doc-pdf-foot{flex:0 0 auto;display:none;padding:11px 14px;background:#fff;border-top:1px solid #e3e3e3;text-align:center}
+.doc-pdf-foot .doc-pdf-btn{width:100%;justify-content:center;padding:13px 18px;font-size:15px}
+
+body.doc-pdf-lock{overflow:hidden!important}
+
+@media (max-width:768px){
+  .doc-pdf-wrap{padding:0}
+  .doc-pdf-panel{max-width:none;max-height:none;height:100%;border-radius:0}
+  .doc-pdf-head{padding:12px 12px}
+  .doc-pdf-title{font-size:15px;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+  .doc-pdf-head .doc-pdf-btn{display:none}
+  .doc-pdf-foot{display:block}
+  .doc-pdf-body{padding:12px 8px 20px}
+}
+@media (prefers-reduced-motion:reduce){
+  .doc-pdf-ov,.doc-pdf-panel{transition:none}
+  .doc-pdf-spin{animation-duration:2s}
+}
+</style>
+
+<script>
+(function () {
+  "use strict";
+  if (window.__docPdfModal) return;
+  window.__docPdfModal = true;
+
+  /* ==== DOCUMENTOS ====================================================
+     Para agregar otro documento del footer, copia una línea más.
+     clave = URL exacta del PDF | title = encabezado | file = nombre al descargar
+  ==================================================================== */
+  var DOCS = {
+    // clave = URL EXACTA del PDF tal como aparece en el href del footer
+    // title = encabezado del modal | file = nombre con el que se descarga
+    "https://assets.cdn.filesafe.space/<TU_LOCATION_ID>/media/<ID_DEL_PDF>.pdf": {
+      title: "Aviso de Privacidad",
+      file:  "Aviso-de-Privacidad-<TuDespacho>.pdf"
+    },
+    "https://assets.cdn.filesafe.space/<TU_LOCATION_ID>/media/<ID_DEL_PDF>.pdf": {
+      title: "Términos y Condiciones",
+      file:  "Terminos-y-Condiciones-<TuDespacho>.pdf"
+    }
+    // copia una entrada más por cada documento del footer
+  };
+
+  var PDFJS_SRC    = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
+  var PDFJS_WORKER = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+  var ICON_DL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>';
+  var ICON_X  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>';
+
+  var ov, panel, elTitle, elBody, elFoot, btnTop, btnBot, btnX;
+  var current = null, lastFocus = null, pdfLoading = null, renderToken = 0;
+
+  /* ---------- construcción del modal (una sola vez) ---------- */
+  function build() {
+    ov = document.createElement("div");
+    ov.className = "doc-pdf-ov";
+    ov.innerHTML =
+      '<div class="doc-pdf-wrap">' +
+        '<div class="doc-pdf-panel" role="dialog" aria-modal="true" aria-labelledby="enqPdfTitle">' +
+          '<div class="doc-pdf-head">' +
+            '<h2 class="doc-pdf-title" id="enqPdfTitle"></h2>' +
+            '<a class="doc-pdf-btn" data-dl href="#" download>' + ICON_DL + '<span>Descargar</span></a>' +
+            '<button class="doc-pdf-x" type="button" aria-label="Cerrar documento">' + ICON_X + '</button>' +
+          '</div>' +
+          '<div class="doc-pdf-body" tabindex="-1"></div>' +
+          '<div class="doc-pdf-foot">' +
+            '<a class="doc-pdf-btn" data-dl href="#" download>' + ICON_DL + '<span>Descargar documento</span></a>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(ov);
+
+    panel   = ov.querySelector(".doc-pdf-panel");
+    elTitle = ov.querySelector(".doc-pdf-title");
+    elBody  = ov.querySelector(".doc-pdf-body");
+    elFoot  = ov.querySelector(".doc-pdf-foot");
+    btnX    = ov.querySelector(".doc-pdf-x");
+    var dls = ov.querySelectorAll("[data-dl]");
+    btnTop = dls[0]; btnBot = dls[1];
+
+    btnX.addEventListener("click", close);
+    ov.addEventListener("mousedown", function (e) { if (e.target === ov || e.target.className === "doc-pdf-wrap") close(); });
+    [btnTop, btnBot].forEach(function (b) { b.addEventListener("click", onDownload); });
+    document.addEventListener("keydown", function (e) {
+      if (!ov.classList.contains("is-open")) return;
+      if (e.key === "Escape") { close(); return; }
+      if (e.key === "Tab") trapFocus(e);
+    });
+  }
+
+  function trapFocus(e) {
+    var f = panel.querySelectorAll('a[href],button:not([disabled])');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  /* ---------- abrir / cerrar ---------- */
+  function open(url, meta) {
+    if (!ov) build();
+    current = { url: url, meta: meta };
+    renderToken++;
+    lastFocus = document.activeElement;
+
+    elTitle.textContent = meta.title;
+    [btnTop, btnBot].forEach(function (b) {
+      b.setAttribute("href", url);
+      b.setAttribute("download", meta.file);
+      b.removeAttribute("disabled");
+    });
+    elBody.innerHTML = '<div class="doc-pdf-msg"><div class="doc-pdf-spin"></div>Cargando documento…</div>';
+    elBody.scrollTop = 0;
+
+    document.body.classList.add("doc-pdf-lock");
+    ov.classList.add("is-open");
+    btnX.focus();
+
+    loadPdfjs()
+      .then(function () { return render(url, renderToken); })
+      .catch(function () { fallback(url, meta); });
+  }
+
+  function close() {
+    if (!ov) return;
+    renderToken++;
+    ov.classList.remove("is-open");
+    document.body.classList.remove("doc-pdf-lock");
+    elBody.innerHTML = "";
+    current = null;
+    if (lastFocus && lastFocus.focus) { try { lastFocus.focus(); } catch (e) {} }
+  }
+
+  /* ---------- carga de PDF.js ---------- */
+  function loadPdfjs() {
+    if (window.pdfjsLib) return Promise.resolve();
+    if (pdfLoading) return pdfLoading;
+    pdfLoading = new Promise(function (res, rej) {
+      var s = document.createElement("script");
+      s.src = PDFJS_SRC;
+      s.onload = function () {
+        if (!window.pdfjsLib) return rej(new Error("pdfjsLib ausente"));
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
+        res();
+      };
+      s.onerror = function () { rej(new Error("no se pudo cargar pdf.js")); };
+      document.head.appendChild(s);
+      setTimeout(function () { if (!window.pdfjsLib) rej(new Error("timeout pdf.js")); }, 12000);
+    });
+    pdfLoading.catch(function () { pdfLoading = null; });
+    return pdfLoading;
+  }
+
+  /* ---------- render de páginas a canvas ---------- */
+  function render(url, token) {
+    return window.pdfjsLib.getDocument({ url: url }).promise.then(function (doc) {
+      if (token !== renderToken) return;
+      elBody.innerHTML = "";
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var chain = Promise.resolve();
+
+      for (var i = 1; i <= doc.numPages; i++) {
+        (function (n) {
+          chain = chain.then(function () {
+            if (token !== renderToken) return;
+            return doc.getPage(n).then(function (page) {
+              if (token !== renderToken) return;
+              var avail = Math.max(elBody.clientWidth - 24, 240);
+              var base  = page.getViewport({ scale: 1 });
+              var scale = Math.min(avail / base.width, 2.2);
+              var vp    = page.getViewport({ scale: scale * dpr });
+
+              var c = document.createElement("canvas");
+              c.className = "doc-pdf-page";
+              c.width  = Math.floor(vp.width);
+              c.height = Math.floor(vp.height);
+              c.style.width  = Math.floor(vp.width / dpr) + "px";
+              c.style.height = Math.floor(vp.height / dpr) + "px";
+              c.setAttribute("role", "img");
+              c.setAttribute("aria-label", "Página " + n + " de " + doc.numPages);
+              elBody.appendChild(c);
+
+              return page.render({ canvasContext: c.getContext("2d"), viewport: vp }).promise;
+            });
+          });
+        })(i);
+      }
+      return chain;
+    });
+  }
+
+  /* ---------- respaldo si PDF.js no carga ---------- */
+  function fallback(url, meta) {
+    var mobile = window.matchMedia("(max-width: 768px)").matches;
+    if (!mobile) {
+      elBody.innerHTML = "";
+      var f = document.createElement("iframe");
+      f.className = "doc-pdf-frame";
+      f.src = url;
+      f.title = meta.title;
+      elBody.appendChild(f);
+    } else {
+      elBody.innerHTML =
+        '<div class="doc-pdf-msg"><p>No pudimos mostrar la vista previa en este dispositivo.</p>' +
+        '<a class="doc-pdf-btn" style="background:#003ca6" target="_blank" rel="noopener" href="' +
+        url.replace(/"/g, "&quot;") + '">Abrir documento</a></div>';
+    }
+  }
+
+  /* ---------- descarga con nombre limpio ---------- */
+  function onDownload(e) {
+    if (!current) return;
+    var url = current.url, name = current.meta.file, btn = e.currentTarget;
+    if (!window.fetch || !window.URL || !window.URL.createObjectURL) return; // deja el download nativo
+    e.preventDefault();
+    var span = btn.querySelector("span"), original = span ? span.textContent : "";
+    if (span) span.textContent = "Descargando…";
+    btn.setAttribute("disabled", "disabled");
+
+    function restore() {
+      if (span) span.textContent = original;
+      btn.removeAttribute("disabled");
+    }
+
+    fetch(url, { mode: "cors" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.blob(); })
+      .then(function (blob) {
+        var href = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = href; a.download = name;
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function () { URL.revokeObjectURL(href); }, 4000);
+        restore();
+      })
+      .catch(function () { window.open(url, "_blank", "noopener"); restore(); });
+  }
+
+  /* ---------- re-render al cambiar el ancho ---------- */
+  var rt;
+  window.addEventListener("resize", function () {
+    if (!current || !ov || !ov.classList.contains("is-open") || !window.pdfjsLib) return;
+    clearTimeout(rt);
+    rt = setTimeout(function () {
+      if (!current) return;
+      renderToken++;
+      var t = renderToken, u = current.url;
+      elBody.innerHTML = '<div class="doc-pdf-msg"><div class="doc-pdf-spin"></div>Ajustando…</div>';
+      render(u, t).catch(function () {});
+    }, 320);
+  });
+
+  /* ---------- interceptar los links del footer (delegación) ---------- */
+  function normalize(h) { return (h || "").split("#")[0].split("?")[0].trim(); }
+
+  document.addEventListener("click", function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+    if (!a) return;
+    if (a.closest(".doc-pdf-ov")) return;   // clics dentro del propio modal (ej. Descargar) no se interceptan
+    var meta = DOCS[normalize(a.href)];
+    if (!meta) return;
+    e.preventDefault();
+    e.stopPropagation();
+    open(normalize(a.href), meta);
+  }, true);
+})();
+</script>

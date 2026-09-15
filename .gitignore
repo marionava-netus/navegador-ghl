@@ -1,0 +1,18 @@
+# Credenciales y sesiones — NUNCA se commitean
+.env
+.auth/
+*.pem
+*.key
+
+# Estado y salidas de la Playwright CLI
+.playwright-cli/
+downloads/
+screenshots/
+*.har
+
+# Node
+node_modules/
+package-lock.json
+
+# macOS
+.DS_Store
